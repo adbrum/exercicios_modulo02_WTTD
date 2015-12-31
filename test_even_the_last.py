@@ -3,7 +3,7 @@ import unittest
 """
 # Melhor solução
 
-def checkio(array):
+def even_the_last(array):
 
     if len(array) == 0: return 0
     return sum(array[0::2]) * array[-1]
@@ -11,7 +11,7 @@ def checkio(array):
 """
 
 
-def even_the_lat(array_):
+def even_the_last(array_):
     res = 0
     if array_:
         for idx, val in enumerate(array_):
@@ -25,16 +25,16 @@ def even_the_lat(array_):
 
 class MyTestCase(unittest.TestCase):
     def test_even_the_last01(self):
-        self.assertEqual(even_the_lat([0, 1, 2, 3, 4, 5]), 30)  # "(0+2+4)*5=30"
+        self.assertEqual(even_the_last([0, 1, 2, 3, 4, 5]), 30)  # "(0+2+4)*5=30"
 
     def test_even_the_last02(self):
-        self.assertEqual(even_the_lat([1, 3, 5]), 30)  # "(1+5)*5=30"
+        self.assertEqual(even_the_last([1, 3, 5]), 30)  # "(1+5)*5=30"
 
     def test_even_the_last03(self):
-        self.assertEqual(even_the_lat([6]), 36)  # "(6)*6=36"
+        self.assertEqual(even_the_last([6]), 36)  # "(6)*6=36"
 
     def test_even_the_last04(self):
-        self.assertEqual(even_the_lat([]), 0)  # "An empty array = 0"
+        self.assertEqual(even_the_last([]), 0)  # "An empty array = 0"
 
 
 if __name__ == '__main__':
