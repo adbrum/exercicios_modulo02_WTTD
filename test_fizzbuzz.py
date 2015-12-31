@@ -1,19 +1,27 @@
 import unittest
 
-from fizzbuzz import fizzBuzz
 
-"""
-    FizzBuzz recebe um número
-    FizzBuzz(1) retorna "1"
-    FizzBuzz(2) retorna "2"
-    FizzBuzz(3) retorna “fizz”
-    FizzBuzz(9) retorna “fizz”
-    FizzBuzz(4) retorna "4"
-    FizzBuzz(5) retorna “buzz”
-    FizzBuzz(10) retorna “buzz”
-    FizzBuzz(15) retorna “fizzbuzz”
-    FizzBuzz(30) retorna “fizzbuzz”
-"""
+def multiplos_de_tres(numero):
+    return not numero % 3
+
+
+def multiplos_de_cinco(numero):
+    return not numero % 5
+
+
+def fizzBuzz(numero):
+    res = str(numero)
+
+    if multiplos_de_tres(numero) and multiplos_de_cinco(numero):
+        res = 'fizzbuzz'
+
+    elif multiplos_de_tres(numero):
+        res = 'fizz'
+
+    elif multiplos_de_cinco(numero):
+        res = 'buzz'
+
+    return res
 
 
 class TestFizzBuzz(unittest.TestCase):
@@ -37,3 +45,16 @@ class TestFizzBuzz(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+"""
+    FizzBuzz recebe um número
+    FizzBuzz(1) retorna "1"
+    FizzBuzz(2) retorna "2"
+    FizzBuzz(3) retorna “fizz”
+    FizzBuzz(9) retorna “fizz”
+    FizzBuzz(4) retorna "4"
+    FizzBuzz(5) retorna “buzz”
+    FizzBuzz(10) retorna “buzz”
+    FizzBuzz(15) retorna “fizzbuzz”
+    FizzBuzz(30) retorna “fizzbuzz”
+"""

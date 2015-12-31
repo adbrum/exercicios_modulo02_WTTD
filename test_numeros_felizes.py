@@ -1,5 +1,20 @@
 import unittest
-from numeros_felizes import *
+
+
+def happy(number):
+    next_ = sum(pow(int(char), 2) for char in str(number))
+    return number in (1, 7) if number < 10 else happy(next_)
+
+
+class MyTestCase(unittest.TestCase):
+    def test_happy(self):
+        self.assertTrue([happy(n) for n in (1, 10, 100, 130, 97)])
+        self.assertTrue(happy(7))
+        self.assertFalse(happy(4))
+
+
+if __name__ == '__main__':
+    unittest.main()
 
 """
 Para saber se um número é feliz, você deve obter o quadrado de cada dígito deste número, em seguida você faz a soma desses resultados. A seguir o mesmo procedimento deve ser feito com o valor resultante desta soma. Se ao repetir o procedimento diversas vezes obtivermos o valor 1, o número inicial é considerado feliz.
@@ -13,15 +28,3 @@ Podemos observar nesse exemplo que os números 49, 97, 130 e 10 também são fel
 E um número triste? Como sabemos que um número não será feliz?
 Desenvolva um programa que determine se um número é feliz ou triste.
 """
-
-class MyTestCase(unittest.TestCase):
-    def test_happy(self):
-        self.assertTrue([happy(n) for n in (1, 10, 100, 130, 97)])
-        self.assertTrue(happy(7))
-        self.assertFalse(happy(4))
-
-
-
-
-if __name__ == '__main__':
-    unittest.main()
