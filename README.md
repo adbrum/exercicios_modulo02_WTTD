@@ -1,1 +1,1 @@
-# exercicios (desafio Dojo) modulo02 WTTD
+# exercícios (desafio Dojo) modulo02 WTTD
